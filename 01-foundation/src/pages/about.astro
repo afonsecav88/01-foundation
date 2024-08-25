@@ -1,0 +1,15 @@
+---
+import CustomTitle from '../components/CustomTitle.astro';
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="About Page">
+	<h1>Astro About</h1>
+	<CustomTitle title="Custom title"/>
+</MainLayout>
+
+<style is:global>
+	h1 {
+		color: bisque;
+	}
+</style>
+

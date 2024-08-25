@@ -1,0 +1,36 @@
+---
+import NavBar from '../components/NavBar.astro';
+import '../styles/global.css'
+/*simula una SPA , no hace refresh del browser mientras se cambia de ruta
+hace una precarga de las paginas
+*/
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+  title:string;
+}
+
+const { title } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link  rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta  name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta  name="generator" content={Astro.generator}>
+  <ViewTransitions/>
+  <title>{title}</title>
+</head>
+<body>
+  <NavBar/>
+  <hr/>
+  <main>
+    <slot/>
+  </main>
+</body>
+</html>
+
+
+

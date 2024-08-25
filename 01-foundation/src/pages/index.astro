@@ -1,0 +1,16 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+// Only server code
+const cat:string ='hola'
+---
+<MainLayout title="Home Page">
+		<h1>Astro {cat}</h1>
+		<footer>
+			{new Date().getFullYear()}
+		</footer>
+		<script>
+			const  currentYear:number = new Date().getFullYear()
+			const footer = document.querySelector('footer') as HTMLElement
+			footer.innerText= `Current year: ${currentYear}`
+		</script>
+</MainLayout>
